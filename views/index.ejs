@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>NBA Information Generator</title>
+      <link rel="icon" type="image/x-icon" href="images/favicon.ico"> 
+      <link rel="stylesheet" href="styles/main.css">
+   </head>
+
+   <body>
+      
+      <img src="images/nba-logo.png" alt="NBA Logo">
+      
+      <h2>Team Information Generator</h2>
+      
+      <p style="font-style: italic;">Enter a number between 1 to 30</p>
+      
+      <div class="submission">
+         
+         <form action="/team" method="post">
+            <input type="text" name="number">
+            <br>
+            <input type="submit" value="Submit">
+         </form>
+      
+      </div>
+      
+      <div class="info">
+         
+         <% if(locals.team){ %>
+            
+            <h2>Team Information</h2>
+            
+            <p> <%= team.abbreviation %> </p>
+      
+            <p> <%= team.city %> </p>
+      
+            <p> <%= team.conference %> </p>
+      
+            <p> <%= team.division %> </p>
+
+            <p> <%= team.full_name %> </p>
+
+         <% } %>
+      
+      </div>
+   
+      <h2>Player Information Generator</h2>
+      
+      <p style="font-style: italic;">Enter a number between 1 to 447</p>
+      
+      <div class="submission">
+         
+         <form action="/player" method="post">
+            <input type="text" name="number2">
+            <br>
+            <input type="submit" value="Submit">
+         </form>
+      
+      </div>
+   
+      <div class="info">
+         
+         <% if(locals.player){ %>
+            
+            <p> <%= player.first_name %> </p>
+      
+            <p> <%= player.last_name %> </p>
+      
+            <p> Position: <%= player.position %> </p>
+      
+            <p> <%= player.height_feet %> feet </p>
+
+            <p> <%= player.height_inches %> inches </p>
+
+            <p> <%= player.weight_pounds %> pounds </p>
+
+            <p> Abbreviation: <%= player.team.abbreviation %> </p>
+      
+            <h3>NBA Players's Team</h3>
+            
+            <p> Full Name: <%= player.team.full_name %> </p>
+            
+            <p> City: <%= player.team.city %> </p>
+      
+            <p> Conference: <%= player.team.conference %> </p>
+      
+            <p> Division: <%= player.team.division %> </p>
+
+         <% } %>
+      
+      </div>
+   
+   </body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "capstone-project-4-using-public-api",
+  "version": "1.0.0",
+  "description": "Website built using the Express/Node.js platform, with the Axios HTTP client, that integrates a public API. The website interacts with a API, retrieve data, and present it in a user-friendly manner.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Parabjot Chander",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
